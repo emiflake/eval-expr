@@ -6,7 +6,7 @@
 #    By: nmartins <nmartins@student.codam.n>          +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/02/20 18:05:21 by nmartins      #+#    #+#                  #
-#    Updated: 2019/02/20 18:15:22 by nmartins      ########   odam.nl          #
+#    Updated: 2019/02/20 18:57:43 by nmartins      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,12 @@ NAME=eval_expr
 
 OBJECT_NAMES=main \
 			 ft_atoi \
-			 eval_expr
+			 eval_expr \
+			 ft_putnbr \
+			 ft_putchar \
+			 ft_putstr \
+			 ft_strlen \
+			 ft_ignore_whitespaces
 
 # do not configure
 CC=gcc
