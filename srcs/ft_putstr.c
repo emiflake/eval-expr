@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.c                                             :+:    :+:            */
+/*   ft_putstr.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: nmartins <nmartins@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/20 18:29:02 by nmartins      #+#    #+#                 */
-/*   Updated: 2019/02/20 18:50:00 by nmartins      ########   odam.nl         */
+/*   Created: 2019/02/20 18:52:21 by nmartins      #+#    #+#                 */
+/*   Updated: 2019/02/20 18:53:02 by nmartins      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft.h>
 
-int	main(int ac, char **av)
+void	ft_putstr(char *str)
 {
-	if (ac > 1)
+	int i;
+
+	i = 0;
+	while (str[i])
 	{
-		ft_putnbr(eval_expr(av[1]));
-		ft_putchar('\n');
+		ft_putchar(str[i]);
+		i++;
 	}
-	return (0);
 }
