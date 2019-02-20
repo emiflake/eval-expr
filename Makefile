@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         ::::::::             #
-#    Makefile                                           :+:    :+:             #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                      +:+                     #
 #    By: nmartins <nmartins@student.codam.n>          +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/02/20 18:05:21 by nmartins      #+#    #+#                  #
-#    Updated: 2019/02/20 18:57:43 by nmartins      ########   odam.nl          #
+#    Updated: 2019/02/20 23:18:52 by emiflake         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@
 NAME=eval_expr
 
 OBJECT_NAMES=main \
-			 ft_atoi \
 			 eval_expr \
 			 ft_putnbr \
 			 ft_putchar \

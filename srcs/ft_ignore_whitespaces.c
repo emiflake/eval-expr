@@ -1,16 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_ignore_whitespaces.c                            :+:    :+:            */
+/*   ft_ignore_whitespaces.c                            :+:      :+:    :+:   */
 /*                                                     +:+                    */
 /*   By: nmartins <nmartins@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/20 18:16:33 by nmartins      #+#    #+#                 */
-/*   Updated: 2019/02/20 18:59:57 by nmartins      ########   odam.nl         */
+/*   Updated: 2019/02/20 23:20:35 by emiflake         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft.h>
+
+int	ft_isspace(char c)
+{
+	return (c == ' ' || c == '\t' || c == '\t');
+}
 
 char	*ft_ignore_whitespaces(char *str)
 {
