@@ -6,12 +6,12 @@
 /*   By: nmartins <nmartins@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/20 18:57:52 by nmartins      #+#    #+#                 */
-/*   Updated: 2019/02/20 23:38:53 by emiflake         ###   ########.fr       */
+/*   Updated: 2019/02/21 13:55:42 by nmartins      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft.h>
-/*#define DEBUG*/
+#define DEBUG
 
 int	eval_stage_2(char **str)
 {
