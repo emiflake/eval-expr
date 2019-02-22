@@ -6,13 +6,13 @@
 /*   By: nmartins <nmartins@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/20 18:16:33 by nmartins      #+#    #+#                 */
-/*   Updated: 2019/02/21 18:37:37 by nmartins      ########   odam.nl         */
+/*   Updated: 2019/02/22 13:25:17 by nmartins      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft.h>
 
-int	ft_isspace(char c)
+int		ft_isspace(char c)
 {
 	return (c == ' ' || c == '\t' || c == '\t');
 }

@@ -6,21 +6,17 @@
 /*   By: nmartins <nmartins@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/20 18:57:52 by nmartins      #+#    #+#                 */
-/*   Updated: 2019/02/21 18:34:20 by nmartins      ########   odam.nl         */
+/*   Updated: 2019/02/22 13:24:57 by nmartins      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft.h>
-#define DEBUG
 
 int	eval_stage_2(char **str)
 {
 	int result;
 
 	result = 0;
-#ifdef DEBUG
-	printf("=> Stage 2: '%s' -> #(%d)\n", *str, result);
-#endif
 	if (**str == '(')
 	{
 		(*str)++;
@@ -38,9 +34,6 @@ int	eval_stage_1(char **str)
 	int result;
 
 	result = eval_stage_2(str);
-#ifdef DEBUG
-	printf("=> Stage 1: '%s' -> #(%d)\n", *str, result);
-#endif
 	while (**str == '*' || **str == '/' || **str == '%')
 	{
 		if (**str == '*')
@@ -64,13 +57,10 @@ int	eval_stage_1(char **str)
 
 int	eval_stage_0(char **str)
 {
-	char *s;
-	int result;
+	char	*s;
+	int		result;
 
 	result = eval_stage_1(str);
-#ifdef DEBUG
-	printf("=> Stage 0: '%s' -> #(%d)\n", *str, result);
-#endif
 	s = *str;
 	while (*s == '+' || *s == '-')
 	{
@@ -91,15 +81,12 @@ int	eval_stage_0(char **str)
 
 int	eval_expr(char *str)
 {
-	char *cleaned;
-	char *walker;
-	int result;
+	char	*cleaned;
+	char	*walker;
+	int		result;
 
 	cleaned = ft_ignore_whitespaces(str);
 	walker = cleaned;
-#ifdef DEBUG
-	printf("===> Cleaned : '%s' \n", cleaned);
-#endif
 	result = eval_stage_0(&walker);
 	free(cleaned);
 	return (result);

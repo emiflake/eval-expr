@@ -1,42 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_ignore_whitespaces.c                            :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: nmartins <nmartins@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/20 18:16:33 by nmartins      #+#    #+#                 */
-/*   Updated: 2019/02/21 18:37:37 by nmartins      ########   odam.nl         */
+/*   Created: 2019/02/20 18:55:29 by nmartins      #+#    #+#                 */
+/*   Updated: 2019/02/20 18:56:21 by nmartins      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft.h>
 
-int	ft_isspace(char c)
+void	ft_putnbr(int n)
 {
-	return (c == ' ' || c == '\t' || c == '\t');
-}
+	long int t;
 
-char	*ft_ignore_whitespaces(char *str)
-{
-	int		len;
-	char	*out;
-	int		i;
-	int		j;
-
-	i = 0;
-	j = 0;
-	len = ft_strlen(str);
-	out = malloc(sizeof(char) * (len + 1));
-	while (str[i])
+	t = n;
+	if (t < 0)
 	{
-		if (!ft_isspace(str[i]))
-		{
-			out[j] = str[i];
-			j++;
-		}
-		i++;
+		ft_putchar('-');
+		t = -t;
 	}
-	out[j] = '\0';
-	return (out);
+	if (t / 10)
+	{
+		ft_putnbr(t / 10);
+	}
+	ft_putchar(t % 10 + '0');
 }

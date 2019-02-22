@@ -1,42 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_ignore_whitespaces.c                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: nmartins <nmartins@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/20 18:16:33 by nmartins      #+#    #+#                 */
-/*   Updated: 2019/02/21 18:37:37 by nmartins      ########   odam.nl         */
+/*   Created: 2019/02/20 18:17:03 by nmartins      #+#    #+#                 */
+/*   Updated: 2019/02/20 18:26:04 by nmartins      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft.h>
 
-int	ft_isspace(char c)
+int	ft_strlen(char *str)
 {
-	return (c == ' ' || c == '\t' || c == '\t');
-}
+	int count;
 
-char	*ft_ignore_whitespaces(char *str)
-{
-	int		len;
-	char	*out;
-	int		i;
-	int		j;
-
-	i = 0;
-	j = 0;
-	len = ft_strlen(str);
-	out = malloc(sizeof(char) * (len + 1));
-	while (str[i])
-	{
-		if (!ft_isspace(str[i]))
-		{
-			out[j] = str[i];
-			j++;
-		}
-		i++;
-	}
-	out[j] = '\0';
-	return (out);
+	count = 0;
+	while (str[count])
+		count++;
+	return (count);
 }

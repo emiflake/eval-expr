@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_ignore_whitespaces.c                            :+:      :+:    :+:   */
+/*   helper.c                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: nmartins <nmartins@student.codam.n>          +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/02/20 18:16:33 by nmartins      #+#    #+#                 */
-/*   Updated: 2019/02/21 18:37:37 by nmartins      ########   odam.nl         */
+/*   Created: 2019/02/20 19:31:34 by nmartins      #+#    #+#                 */
+/*   Updated: 2019/02/22 13:25:34 by nmartins      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft.h>
 
-int	ft_isspace(char c)
+int	is_digit(char c)
 {
-	return (c == ' ' || c == '\t' || c == '\t');
+	return (c >= '0' && c <= '9');
 }
 
-char	*ft_ignore_whitespaces(char *str)
+int	scan_offset(char *str, char target, int limit)
 {
-	int		len;
-	char	*out;
-	int		i;
-	int		j;
+	int i;
 
 	i = 0;
-	j = 0;
-	len = ft_strlen(str);
-	out = malloc(sizeof(char) * (len + 1));
-	while (str[i])
+	while (i < limit)
 	{
-		if (!ft_isspace(str[i]))
-		{
-			out[j] = str[i];
-			j++;
-		}
+		if (str[i] == target)
+			return (i);
 		i++;
 	}
-	out[j] = '\0';
-	return (out);
+	return (-1);
+}
+
+int	nearest_stage_0(char *str, int limit)
+{
+	int offset_plus;
+	int offset_minus;
+
+	offset_plus = scan_offset(str, '+', limit);
+	offset_minus = scan_offset(str, '-', limit);
+	return (offset_mins < offset_plus ? offset_minus : offset_plus);
 }

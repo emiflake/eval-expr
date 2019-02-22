@@ -15,12 +15,12 @@ const make_stuff = (length, depth) =>
 	else
 	{
 		return "(" + (new Array(length)).fill(0)
-			.map(x => choose([make_number(5), make_stuff(10, depth - 1)]))
+			.map(x => choose([make_number(5), make_stuff(5, depth - 1)]))
 			.reduce((acc, v) => `${acc} ${choose(operators)} ${v}`) + ")";    
 	}
 }
 
-const mk_pair = () => (expr => [expr, eval(expr)])(make_stuff(2, 3));
+const mk_pair = () => (expr => [expr, eval(expr)])(make_stuff(5, 3));
 
 const sleep = ms => new Promise((resolve, reject) => {
 	setTimeout(resolve, ms);
@@ -58,7 +58,7 @@ void async function()
 		}
 		process.stdout.clearLine();
 		process.stdout.cursorTo(0);
-		process.stdout.write(`\u001b[32mSITREP ${batch}\u001b[37m - \u001b[31mFAILS:${fails}\u001b[37m - \u001b[32mSUCCESSES: ${successes} \u001b[37m`);
+		process.stdout.write(`\u001b[32mSITREP ${batch}\u001b[37m - \u001b[31mFAILS:${fails}\u001b[37m - \u001b[32mSUCCESSES: ${successes} \u001b[37m - \u001b[32m SUCCESS RATE: ${(successes / (successes + fails)) * 100}%`);
 		await sleep(10);
 	}
 }();
